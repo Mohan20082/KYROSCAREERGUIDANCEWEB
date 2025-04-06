@@ -4,6 +4,16 @@ console.log("EMAIL_PASS:", process.env.EMAIL_PASS);
 
 const express = require('express');
 const app = express(); // <- define app here first
+const cors = require('cors');
+
+// Enable CORS for frontend
+app.use(cors({
+  origin: 'https://kyroscareerguidanceweb.onrender.com',
+  credentials: true
+}));
+
+// Enable JSON parsing
+app.use(express.json());
 
 const mongoose = require('mongoose');
 const cors = require('cors'); // only once!
@@ -17,12 +27,6 @@ const nodemailer = require('nodemailer');
 const User = require('./models/User');
 const Assessment = require('./models/Assessment');
 const Booking = require('./models/Booking');
-
-// Enable CORS for frontend
-app.use(cors({
-    origin: "https://kyroscareerguidanceweb.onrender.com",
-    credentials: true
-}));
 
 const PORT = process.env.PORT || 5000;
 
