@@ -3759,7 +3759,7 @@
         const viewEducationPlanBtn = document.getElementById('view-education-plan');
 
         // Backend API base URL
-        const API_BASE = 'https://kyroscareerguidanceweb.onrender.com';
+        const API_BASE = 'https://kyroscareerguidanceweb.onrender.com/api';
 
 
         // Open signup modal from hero button
@@ -3819,7 +3819,7 @@
             const password = loginForm.querySelector('#login-password').value;
 
             try {
-                const res = await fetch(`${API_BASE}/login`, {
+                const res = await fetch(`${API_BASE}/api/login`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -3862,7 +3862,7 @@
             const password = signupForm.querySelector('#signup-password').value;
 
             try {
-                const res = await fetch(`${API_BASE}/register`, {
+                const res = await fetch(`${API_BASE}/api/register`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
