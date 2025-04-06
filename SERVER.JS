@@ -28,7 +28,7 @@ app.get('/test-api', (req, res) => {
 });
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/kyros', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://Mohan:20082001Tinku@cluster0.hwxjzfe.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
