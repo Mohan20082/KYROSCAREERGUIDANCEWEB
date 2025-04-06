@@ -3819,15 +3819,14 @@
             const password = loginForm.querySelector('#login-password').value;
 
             try {
-                const res = await fetch(`${API_BASE}/login`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        email,
-                        password
-                    }),
+                const res = awaitfetch("https://kyroscareerguidanceweb.onrender.com/api/login", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({ name, email, password })
+});
+
                 });
 
                 const data = await res.json();
@@ -3862,16 +3861,14 @@
             const password = signupForm.querySelector('#signup-password').value;
 
             try {
-                const res = await fetch(`${API_BASE}/register`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        name,
-                        email,
-                        password
-                    }),
+                const res = await fetch("https://kyroscareerguidanceweb.onrender.com/api/register", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({ name, email, password })
+});
+
                 });
 
                 const data = await res.json();
