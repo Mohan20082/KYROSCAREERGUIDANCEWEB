@@ -2,21 +2,30 @@ require('dotenv').config();
 console.log("EMAIL_USER:", process.env.EMAIL_USER);
 console.log("EMAIL_PASS:", process.env.EMAIL_PASS);
 
-const mongoose = require('mongoose');
 const express = require('express');
-const cors = require('cors');
+const app = express(); // <- define app here first
+
+const mongoose = require('mongoose');
+const cors = require('cors'); // only once!
 const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const multer = require('multer');
 const nodemailer = require('nodemailer');
+
 const User = require('./models/User');
 const Assessment = require('./models/Assessment');
 const Booking = require('./models/Booking');
 
-const app = express();
+// Enable CORS for frontend
+app.use(cors({
+    origin: "https://kyroscareerguidanceweb.onrender.com",
+    credentials: true
+}));
+
 const PORT = process.env.PORT || 5000;
+
 
 // Middleware
 app.use(cors());
